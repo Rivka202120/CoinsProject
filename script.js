@@ -66,7 +66,7 @@ $(() => {
 
             // בעת לחיצה- שולף את הפרטים של כל מטבע לפי הID
             $(".btnMI_" + c.id).click(function () {
-                $(this).next().toggle();
+                // $(this).next().toggle();
                 divItem.html(`
                 <div class="spinner-border spinner"></div>
                 `);
