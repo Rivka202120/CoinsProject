@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cryptonite</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div id="header" class="row border-bottom border-dark bg-light">
+            <div class="col display-1 font-weight-bold text-primary">
+                Cryptonite
+            </div>
+            <div class="d-none d-md-flex col-3 col-lg-2 d-block px-0 mr-0 mt-4" id="logo">
+                <img src="http://blog.cybureau.org/wp-content/uploads/2015/01/A-Bitcoin-010.jpg" alt="" id="logo"
+                    class="img-fluid border-dark border-bottom">
+
+            </div>
+        </div>
+
+        <div id="mainDiv" class="mt-2 col-12 d-flex" style="height: 100px;">
+            <div class="col-12 col-md-9 col-lg-12">
+                <div class="col-1"></div>
+                <div class="col-12 col-lg-10 border">
+                    <div class="row">
+                        <div class="col-12 mt-3">
+                            <div class="d-inline-block float-left col-12 col-sm-7 px-0 col-md-7 col-lg-8">
+                                <div class="tab col-12 col-sm-12 col-lg-9  mb-3 sticky-top navbar-light">
+                                    <button id="coins-btn" class="tab-btn btn bg-primary text-light"
+                                        onclick="navigataPages(event, 'coins')">Coins</button>
+                                    <button id="reports-btn" class="tab-btn btn bg-light text-primary"
+                                        onclick="navigataPages(event, 'reports')">Reports</button>
+                                    <button id="about-btn" class="tab-btn btn bg-light text-primary"
+                                        onclick="navigataPages(event, 'about')">About</button>
+                                    <button id="parallax-btn" class="tab-btn btn bg-light text-primary"
+                                        onclick="navigataPages(event, 'parallax')">Parallax</button>
+                                </div>
+
+                            </div>
+                            <div class="float-right d-inline-block col-6 col-sm col-md-4 col-lg-3">
+                                <div class="input-group mb-3 ml-1">
+                                    <input type="text" id="input1" class="form-control" placeholder="Search"
+                                        aria-label="Search" aria-describedby="basic-addon2">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-secondary" id="btnSearch" type="button">Search</button>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="col"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 border mt-5">
+            <div class="col-12">
+                <div class="tabContent d-flex justify-content-around" id="tabContent" style="height: 500px;">
+                    <div class="d-inline-flex flex-wrap tab-cont" id="coins">
+                        <!--****************************************-->
+                        <div class="tabcontent mb-2 d-flex flex-wrap justify-content-around align-content-start"
+                            id="coins" tyle="display: block;">
+                            <!-- modal was here -->
+                        </div>
+                        <!-- <div class="loader" id="loading"></div> -->
+                        <!--****************************************-->
+                    </div>
+                    <div class="d-none tab-cont" id="reports">
+
+                    </div>
+                    <div class="d-none tab-cont" id="about">
+                        <h2 id="about">A project about virtual currencies</h2>
+                        <h5 id="about">I was asked to do this project within 3 weeks, in the Dishmia faction I withstood
+                            the pressure of time and submitted a perfect project :)</h5>
+                        <img id="imgAbout"
+                            src="https://buybit.co.il/wp-content/uploads/2021/02/bitcoin-is-new-concept-virtual-money-graphics-digital-background-coins-with-image-letter-b_169016-4596.jpg"
+                            alt="">
+                    </div>
+
+                    <div class="d-none tab-cont tabcontent container-fluid" id="parallax">
+                        <main id="main">
+                            <div id="img1" class="box1"></div>
+                            <div id="img2" class="box2"></div>
+                            <div id="img3" class="box3"></div>
+                            <div id="img4" class="box4"></div>
+                        </main>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                        <h3>Selected currencies</h3>
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="closeModal()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="formCoins">
+                        <!-- coins -->
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                        onclick="closeModal();modalIsOpen=false">Close</button>
+                    <button type="button" class="btn btn-primary" id="saveBtn" onclick="saveCoin();modalIsOpen=false"
+                        disabled>Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
